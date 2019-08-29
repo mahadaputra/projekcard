@@ -1,0 +1,42 @@
+<div class="container text-center h-100 align-items-center" style= height:auto;>
+  <div class="d-flex justify-content-center">
+    <div class="user_card ">
+      <div class="d-flex justify-content-center">
+        <div class="brand_logo_container">
+          <img src="https://www.pngfind.com/pngs/m/49-490685_starry-yin-yang-cats-yin-yang-cats-hd.png" width="150" height="150" class="brand_logo" alt="Logo">
+        </div>
+      </div>
+        <h2>Sign In</h2>
+
+      <div class="d-flex justify-content-center">
+                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class ="field col-lg-offset-43">
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Email Address"%>
+        </div>
+
+      <div class="field col-lg-offset-4">
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password" %>
+      </div>
+
+        <% if devise_mapping.rememberable? %>
+          <div class="field col-lg-offset-4">
+            <%= f.check_box :remember_me %>
+            <%= f.label :remember_me %>
+          </div>
+        <% end %>
+      </div>
+
+   <div class="actions col-lg-offset-4">
+      <%= f.submit "Log in", :class =>"btn btn-md btn-primary" %>
+   </div>
+
+<% end %>
+
+  <div class="actions col-lg-offset-4">
+    Don't have account?
+    <%= render "devise/shared/links" %><br><br>
+  </div>
+
+    </div>
+  </div>
+</div>
